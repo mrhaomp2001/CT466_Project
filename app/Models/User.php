@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Classroom;
 
 class User extends Authenticatable
 {
@@ -21,6 +22,7 @@ class User extends Authenticatable
         'name',
         'username',
         'password',
+        'classroom_id',
     ];
 
     /**
@@ -40,4 +42,9 @@ class User extends Authenticatable
      */
     protected $casts = [
     ];
+
+    public function classroom()
+    {
+        return $this->belongsTo(Classroom::class);
+    }
 }

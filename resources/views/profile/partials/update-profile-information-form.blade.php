@@ -4,6 +4,18 @@
             {{ __('Profile Information') }}
         </h2>
 
+        <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+            Các lớp học:
+        </h3>
+
+        @foreach($classroom as $class)
+
+            <p class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                {{ $class->name }}
+            </p>
+
+        @endforeach
+
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
             {{ __("Update your account's profile information and email address.") }}
         </p>
