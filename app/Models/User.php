@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Classroom;
+use App\Models\Question;
 
 class User extends Authenticatable
 {
@@ -47,5 +48,10 @@ class User extends Authenticatable
     public function classroom()
     {
         return $this->belongsTo(Classroom::class);
+    }
+    
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
     }
 }

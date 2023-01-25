@@ -34,6 +34,7 @@
 
 
     @vite(['resources/css/animate.css', 'resources/css/flex-slider.css', 'resources/css/fontawesome.css', 'resources/css/owl.css', 'resources/css/cyborg.css'])
+    @livewireStyles
 </head>
 
 <body>
@@ -93,5 +94,5 @@
 
     @vite(['resources/js/owl-carousel.js', 'resources/js/popup.js', 'resources/js/tabs.js', 'resources/js/custom.js'])
 
-    <script src=""></script>
+    @livewireScripts
 </body>

@@ -18,6 +18,9 @@ return new class extends Migration
             $table->integer('question_id');
             $table->string('content');
             $table->string('post_content');
+            $table->integer('correct');
+            $table->integer('money');
+            $table->integer('exp');
             $table->timestamps();
         });
     }

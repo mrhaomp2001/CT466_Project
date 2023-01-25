@@ -16,7 +16,7 @@ class ClassroomSeeder extends Seeder
     public function run()
     {
         //
-        for($i = 0; $i < 3; $i++) {
+        for($i = 1; $i < 5; $i++) {
             $classroom = new Classroom;
             $classroom->name = 'Tên lớp ' . $i;
             $classroom->description = 'Miêu tả lớp ' . $i;
