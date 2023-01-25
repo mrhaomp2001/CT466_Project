@@ -830,7 +830,7 @@ Most Popular Style
 */
 
 .most-popular {
-  margin-top: 60px;
+  margin-top: 5px;
   padding: 30px;
   background-color: #1f2122;
   border-radius: 23px;
@@ -1667,7 +1667,7 @@ body {
 
 @media (max-width: 767px) {
   body .page-content {
-    padding: 0px 30px;
+    padding: 0px 5px;
   }
   .main-banner {
     text-align: center;

@@ -1,3 +1,4 @@
+
 (function ($) {
   "use strict";
 
@@ -145,8 +146,9 @@
   if ($(".menu-trigger").length) {
     $(".menu-trigger").on("click", function () {
       $(this).toggleClass("active");
+      // console.log("Menu Toggle");
       $(".header-area .nav").slideToggle(200);
-	  $(".header-area .nav").props("style", "display: block");
+	    // $(".header-area .nav").props("style", "display: block");
     });
   }
 

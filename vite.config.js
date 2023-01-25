@@ -13,18 +13,23 @@ export default defineConfig({
                 "resources/css/fontawesome.css",
                 "resources/css/owl.css",
                 "resources/css/cyborg.css",
-                "resources/css/bootstrap.css",
-                "resources/css/bootstrap.min.css",
 
-                "resources/js/custom.js",
-                "resources/js/isotope.js",
+                "resources/js/custom.js",   
                 "resources/js/owl-carousel.js",
                 "resources/js/popup.js",
                 "resources/js/tabs.js",
-                "resources/js/jquery.js",
-                "resources/js/bootstrap.min.js",
             ],
             refresh: true,
         }),
     ],
+    build: {
+        rollupOptions: {
+            output: {
+                entryFileNames: `assets/[name].js`,
+                chunkFileNames: `assets/[name].js`,
+                assetFileNames: `assets/[name].[ext]`,
+            },
+        },
+        minify: false,
+    },
 });
