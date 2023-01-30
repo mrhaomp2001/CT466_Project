@@ -25,4 +25,14 @@ class Classroom extends Model
         return $this->hasMany(User::class);
     }
 
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
+    public function questionsRandom()
+    {
+        return $this->hasMany(Question::class)->inRandomOrder();
+    }
+
 }

@@ -57,6 +57,22 @@
                                 <a class="text-center"
                                     href="/classes">Lớp học</a>
                             </li>
+                            <li>
+                                <!-- Authentication -->
+                                <form method="POST"
+                                    action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <x-dropdown-link
+                                        :href="route(
+                                            'logout',
+                                        )"
+                                        onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </x-dropdown-link>
+                                </form>
+                            </li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -81,12 +97,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="page-content">
-
-                    <div class="most-popular">
-                        @yield('content')
-                    </div>
-
+                <div class="most-popular">
+                    @yield('content')
                 </div>
             </div>
         </div>

@@ -24,4 +24,14 @@ class Question extends Model
     {
         return $this->hasMany(Answer::class);
     }
+
+    public function getAnswersRandom()
+    {
+        return $this->hasMany(Answer::class)->inRandomOrder();
+    }
+
+    public function classroom()
+    {
+        return $this->belongsTo(Classroom::class);
+    }
 }
