@@ -21,6 +21,7 @@ class StudyComponent extends Component
 
     public function mount()
     {
+        $this->test = "Test Textbox";
         $this->user = Auth::user();
         $this->question = $this->user->question;
         $this->answers = $this->question->getAnswersRandom;

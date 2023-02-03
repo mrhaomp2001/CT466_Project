@@ -23,8 +23,7 @@
         </div>
     @endforeach
 
-    <div wire:model="test" class="text-light">
-        {{ $test }}
+    <div class="row mt-5">
+        <input wire:model="test" class="col-12">
     </div>
-
 </div>
