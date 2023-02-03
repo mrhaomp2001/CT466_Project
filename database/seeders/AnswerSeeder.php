@@ -16,7 +16,7 @@ class AnswerSeeder extends Seeder
     public function run()
     {
         //
-        for ($i = 1; $i < 10; $i++) {
+        for ($i = 1; $i < 37; $i++) {
             
             //--
             $answer = new Answer();

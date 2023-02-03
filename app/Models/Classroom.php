@@ -18,6 +18,7 @@ class Classroom extends Model
     protected $fillable = [
         'name',
         'description',
+        'is_opened',
     ];
 
     public function users()

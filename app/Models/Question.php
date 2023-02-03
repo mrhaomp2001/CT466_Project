@@ -9,7 +9,7 @@ use App\Models\Answer;
 class Question extends Model
 {
     use HasFactory;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -25,13 +25,13 @@ class Question extends Model
         return $this->hasMany(Answer::class);
     }
 
-    public function getAnswersRandom()
-    {
-        return $this->hasMany(Answer::class)->inRandomOrder();
-    }
-
     public function classroom()
     {
         return $this->belongsTo(Classroom::class);
+    }
+
+    public function getAnswersRandom()
+    {
+        return $this->hasMany(Answer::class)->inRandomOrder();
     }
 }

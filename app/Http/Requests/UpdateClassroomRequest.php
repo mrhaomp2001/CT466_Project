@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateClassroomRequest extends FormRequest
 {
@@ -13,7 +14,9 @@ class UpdateClassroomRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        $user = Auth::user();
+        if($user->role->permission < 100) return false;
+        return true;
     }
 
     /**
@@ -24,7 +27,9 @@ class UpdateClassroomRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            // 
+            'name' => ['required', 'max:128'],
+            'description' => ['required', 'min:8', 'max:255'],
         ];
     }
 }

@@ -16,14 +16,15 @@ class QuestionSeeder extends Seeder
     public function run()
     {
         //
-        for($i = 1; $i < 10; $i++)
-        {
-            $question = new Question();
+        for ($j = 1; $j < 5; $j++) {
+            for ($i = 1; $i < 10; $i++) {
+                $question = new Question();
 
-            $question->classroom_id = 1;
-            $question->content = "Câu hỏi " . $i;
-            
-            $question->save(); 
+                $question->classroom_id = $j;
+                $question->content = "Câu hỏi " . $i . " >> Thuộc lớp: " . $j;
+
+                $question->save();
+            }
         }
     }
 }

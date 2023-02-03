@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudyController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,16 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/study', [StudyController::class, 'index'])->name('study.index');
+});
+
+Route::prefix('/admin')->middleware(['auth', 'role:50'])->group(function () {
+    Route::get('/classroom', [ClassroomController::class, 'index'])->name('admin-classroom.index');
+    Route::get('/classroom/show/{id}', [ClassroomController::class, 'show'])->name('admin-classroom.show');
+    Route::patch('/classroom', [ClassroomController::class, 'update'])->name('admin-classroom.update');
+    Route::delete('/classroom/{id}', [ClassroomController::class, 'destroy'])->name('admin-classroom.destroy');
+
+    Route::get('/classroom-create', [ClassroomController::class, 'create'])->name('admin-classroom.create');
+    Route::post('/classroom-create', [ClassroomController::class, 'store'])->name('admin-classroom.store');
 });
 
 

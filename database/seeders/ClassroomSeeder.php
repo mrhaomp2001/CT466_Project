@@ -20,7 +20,7 @@ class ClassroomSeeder extends Seeder
             $classroom = new Classroom;
             $classroom->name = 'Tên lớp ' . $i;
             $classroom->description = 'Miêu tả lớp ' . $i;
-            
+            $classroom->is_opened = 0;
             $classroom->save();
         }
     }
