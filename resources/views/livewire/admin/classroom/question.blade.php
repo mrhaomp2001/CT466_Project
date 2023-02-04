@@ -44,6 +44,20 @@
                         @empty
                             <h3>Câu hỏi này chưa có câu trả lời nào cả, hãy tạo 1 câu trả lời</h3>
                         @endforelse
+                        <div class="border rounded row my-2 py-2">
+                            <div class="mt-2 mx-1 row">
+                                <h2 class="col-12" for="answer">Tạo câu trả lời mới:</h2>
+                                @if ($errors->has('newAnswerContent'))
+                                    <p class="text-danger">
+                                        {{ $errors->first('newAnswerContent') }}
+                                    </p>
+                                @endif
+                                <input wire:model="newAnswerContent" class="col-md-8 col-12 text-dark border rounded" type="text" placeholder="Nhập câu trả lời mới">
+
+                                <button wire:click="addAnswer()" class="col-md-4 col-12 btn btn-info border text-light" type="button">Thêm</button>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

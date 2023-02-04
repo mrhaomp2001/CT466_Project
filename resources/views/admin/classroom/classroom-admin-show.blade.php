@@ -6,11 +6,36 @@
         @if ($classroom != null)
             <h1 class="fs-1 text-center">{{ $classroom->name }}</h1>
             <hr class="text-light mt-3">
-            <p class="fs-5 text-light">{{ $classroom->description }}</p>
-            <div class="main-border-button my-2 text-md-start text-center">
-                <a class="btn" data-bs-toggle="collapse" href="#classCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Chỉnh sửa thông tin lớp
-                </a>
+            <div class="row d-flex justify-content-between">
+                <div class="col-8">
+                    <p class="fs-5 text-light text-break">
+                        {{ $classroom->description }}
+                    </p>
+
+                    @if ($classroom->is_opened === 1)
+                    <div>
+                        <p class=" text-light">
+                            Tình trạng lớp học: 
+                            <span class="text-success">
+                                Đang mở cửa
+                            </span>
+                        </p>
+                    </div>
+                    @else
+                    <p class=" text-light">
+                        Tình trạng lớp học: 
+                        <span class="text-danger">
+                            Đang đóng cửa
+                        </span>
+                    </p>
+                    @endif
+
+                </div>
+                <div class="col-4 main-border-button my-2 text-md-end text-center">
+                    <a class="btn" data-bs-toggle="collapse" href="#classCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Chỉnh sửa thông tin lớp
+                    </a>
+                </div>
             </div>
             <div class="collapse" id="classCollapse">
                 <div class="card card-body rounded bg-dark border">
@@ -28,6 +53,10 @@
                         <div class="row">
                             <label class="col-md-2 text-md-end text-start py-md-2 text-light" for="description">Miêu tả lớp học: </label>
                             <textarea class="col-md-10 col-12 rounded" name="description" cols="30" rows="5">{{ $classroom->description }}</textarea>
+                        </div>
+                        <div class="row d-flex align-items-center">
+                            <label class="col-md-2 text-md-end text-start py-md-2 text-light form-check-label" for="is_opened">Mở cửa </label>
+                            <input class="col-md-1 form-check-input " type="checkbox" name="is_opened" @if ($classroom->is_opened === 1) checked @endif>
                         </div>
                         <div class="row">
                             <button class="btn btn-cyborg offset-md-2 col-md-4 mt-2 text-center" type="submit">Chỉnh sửa</button>
@@ -61,7 +90,6 @@
             <h1 class="mt-3">Các câu hỏi:</h1>
 
             @livewire('admin.classroom.classroom', ['classroom' => $classroom], key($classroom->id))
-
         @else
             <hr class="text-light">
             <p class="text-light">Không tìm thấy lớp học bạn đang yêu cầu</p>

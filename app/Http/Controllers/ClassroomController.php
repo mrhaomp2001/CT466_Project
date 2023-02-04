@@ -86,10 +86,20 @@ class ClassroomController extends Controller
     public function update(UpdateClassroomRequest $request)
     {
         //
+
         $classroom = Classroom::find($request->id);
 
         $classroom->name = $request->name;
         $classroom->description = $request->description;
+        
+        if($request->has('is_opened'))
+        {
+            $classroom->is_opened = 1;
+        }
+        else
+        {
+            $classroom->is_opened = 0;
+        }
 
         $classroom->save();
 

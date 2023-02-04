@@ -22,8 +22,8 @@ class AnswerSeeder extends Seeder
             $answer = new Answer();
 
             $answer->question_id = $i;
-            $answer->content = "Câu trả lời 1";
-            $answer->post_content = "Nội dung sau trả lời 1";
+            $answer->content = "Câu trả lời 1 -> câu hỏi -> id: " . $i;
+            $answer->post_content = "Nội dung sau trả lời 1 -> câu hỏi -> id: " . $i;
             $answer->correct = 1;
             $answer->money = 0;
             $answer->exp = 0;
@@ -34,8 +34,8 @@ class AnswerSeeder extends Seeder
             $answer = new Answer();
 
             $answer->question_id = $i;
-            $answer->content = "Câu trả lời 2";
-            $answer->post_content = "Nội dung sau trả lời 2";
+            $answer->content = "Câu trả lời 2 -> câu hỏi -> id: " . $i;
+            $answer->post_content = "Nội dung sau trả lời 2 -> câu hỏi -> id: " . $i;
             $answer->correct = 0;
             $answer->money = 0;
             $answer->exp = 0;
@@ -46,8 +46,8 @@ class AnswerSeeder extends Seeder
             $answer = new Answer();
 
             $answer->question_id = $i;
-            $answer->content = "Câu trả lời 3";
-            $answer->post_content = "Nội dung sau trả lời 3";
+            $answer->content = "Câu trả lời 3 -> câu hỏi -> id: " . $i;
+            $answer->post_content = "Nội dung sau trả lời 3 -> câu hỏi -> id: " . $i;
             $answer->correct = 0;
             $answer->money = 0;
             $answer->exp = 0;
@@ -58,8 +58,8 @@ class AnswerSeeder extends Seeder
             $answer = new Answer();
 
             $answer->question_id = $i;
-            $answer->content = "Câu trả lời 4";
-            $answer->post_content = "Nội dung sau trả lời 4";
+            $answer->content = "Câu trả lời 4 -> câu hỏi -> id: " . $i;
+            $answer->post_content = "Nội dung sau trả lời 4 -> câu hỏi -> id: " . $i;
             $answer->correct = 0;
             $answer->money = 0;
             $answer->exp = 0;

@@ -20,6 +20,6 @@ class Classroom extends Component
 
     public function render()
     {
-        return view('livewire.admin.classroom.classroom', ['questions' => Question::where('classroom_id', '=', $this->classroom->id)->paginate(5)]);
+        return view('livewire.admin.classroom.classroom', ['questions' => Question::where('classroom_id', '=', $this->classroom->id)->orderBy('id', 'DESC')->paginate(5)]);
     }
 }
