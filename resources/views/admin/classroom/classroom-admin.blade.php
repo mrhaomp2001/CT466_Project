@@ -14,8 +14,12 @@
                 <div class="item">
                     <h1>{{ $classroom->name }}</h1>
                     <p>{{ $classroom->description }}</p>
-                    <div class="main-border-button "><a href="{{ route('admin-classroom.show', $classroom->id) }}">Chỉnh
-                            sửa</a></div>
+                    <div class="main-border-button ">
+                        <hr class="text-light my-2">
+                        <div class="row d-flex justify-content-center ">
+                            <a class="col-4 text-center" href="{{ route('admin-classroom.show', $classroom->id) }}">Chỉnh sửa</a>
+                        </div>
+                    </div>
                 </div>
             @endforeach
         </div>

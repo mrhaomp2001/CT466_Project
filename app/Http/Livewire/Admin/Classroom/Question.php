@@ -2,39 +2,49 @@
 
 namespace App\Http\Livewire\Admin\Classroom;
 
-use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 class Question extends Component
 {
     public $question;
-    public $inputQuestion;
+    public $isShow;
+    public $isDeleted;
+    public $newAnswer;
 
     protected $rules = [
-        'name' => 'required|min:6',
-        'email' => 'required|email',
+        'question.content' => 'required|string|max:255',
     ];
+
+    protected $listeners = ['refreshQuestion' => '$refresh'];
 
     public function mount()
     {
+        $this->isShow = false;
+    }
 
-        $this->inputQuestion = $this->question->content;
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
     }
 
     public function updateQuestion()
     {
-        $validatedData = Validator::make(
-            ['Content' => $this->inputQuestion],
-            ['Content' => 'required|max:255'],
-            [
-                'required' => ':attribute cần phải được nhập',
-                'max' => 'Tối đa là 255 ký tự',
-            ]
-        )->validate();
+        $this->validate();
+        $this->question->save();
+        $this->emit('refreshClassroom');
+    }
 
-        // dd($validatedData);
-        // $this->question->content = $this->inputQuestion;
-        // $this->question->save();
+    public function deleteQuestion()
+    {
+        $this->question->answers->each->delete();
+        $this->question->delete();
+        $this->isDeleted = true;
+        $this->emit('refreshClassroom');
+    }
+
+    public function addAnswer()
+    {
+        
     }
 
     public function render()

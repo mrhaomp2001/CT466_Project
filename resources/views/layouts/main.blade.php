@@ -22,8 +22,12 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-
     @vite(['resources/css/animate.css', 'resources/css/flex-slider.css', 'resources/css/fontawesome.css', 'resources/css/owl.css', 'resources/css/cyborg.css'])
+
+    <style>
+
+    </style>
+
     @livewireStyles
 </head>
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Classroom;
 use App\Http\Requests\StoreClassroomRequest;
 use App\Http\Requests\UpdateClassroomRequest;
+use App\Models\Answer;
+use App\Models\Question;
 
 class ClassroomController extends Controller
 {
@@ -59,7 +61,8 @@ class ClassroomController extends Controller
     {
         //
         $classroom = Classroom::find($id);
-        return view('admin.classroom.classroom-admin-show', compact('classroom'));
+        $questions = Question::where('classroom_id', '=', $id)->paginate(5);
+        return view('admin.classroom.classroom-admin-show', compact('classroom', 'questions'));
     }
 
     /**

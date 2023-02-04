@@ -35,5 +35,4 @@ class Classroom extends Model
     {
         return $this->hasMany(Question::class)->inRandomOrder();
     }
-
 }

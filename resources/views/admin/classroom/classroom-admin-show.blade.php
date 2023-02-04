@@ -59,9 +59,9 @@
                 </div>
             </div>
             <h1 class="mt-3">Các câu hỏi:</h1>
-            @foreach ($classroom->questions as $question)
-                <livewire:admin.classroom.question :question="$question" :wire:key="$question->id" />
-            @endforeach
+
+            @livewire('admin.classroom.classroom', ['classroom' => $classroom], key($classroom->id))
+
         @else
             <hr class="text-light">
             <p class="text-light">Không tìm thấy lớp học bạn đang yêu cầu</p>
