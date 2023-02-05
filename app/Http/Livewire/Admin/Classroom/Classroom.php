@@ -12,10 +12,27 @@ class Classroom extends Component
 
     public $classroom;
 
+    public $newQuestionContent;
+
     protected $listeners = ['refreshClassroom' => '$refresh'];
+
+    protected $rules = [
+        'newQuestionContent' => 'required|string|max:255',
+    ];
 
     public function mount()
     {
+    }
+
+    public function addQuestion()
+    {
+        $this->validate();
+        $newQuestion = new Question;
+        $newQuestion->classroom_id = $this->classroom->id;
+        $newQuestion->content = $this->newQuestionContent;
+        $newQuestion->save();
+
+        $this->newQuestionContent = "";
     }
 
     public function render()

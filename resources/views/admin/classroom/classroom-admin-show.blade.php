@@ -87,8 +87,6 @@
                     </div>
                 </div>
             </div>
-            <h1 class="mt-3">Các câu hỏi:</h1>
-
             @livewire('admin.classroom.classroom', ['classroom' => $classroom], key($classroom->id))
         @else
             <hr class="text-light">

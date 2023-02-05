@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Livewire\Admin\Classroom;
+
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\Answer;
@@ -46,7 +47,7 @@ class Question extends Component
 
     public function addAnswer()
     {
-        $validatedData = Validator::make(
+        Validator::make(
             ['newAnswerContent' => $this->newAnswerContent],
             ['newAnswerContent' => 'required|max:255'],
             [
@@ -64,6 +65,8 @@ class Question extends Component
         $newAnswer->money = 0;
 
         $newAnswer->save();
+        
+        $this->newAnswerContent = "";
         $this->emit('refreshQuestion');
     }
 

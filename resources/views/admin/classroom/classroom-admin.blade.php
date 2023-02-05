@@ -5,8 +5,15 @@
     <div class="page-content">
         <div class="gaming-library">
             <div class="col-lg-12">
-                <div class="heading-section">
-                    <h4><em>Tất cả</em> các lớp học</h4>
+                <div class="heading-section row d-flex justify-content-between">
+                    <div class="col-md-10 col-6">
+                        <h4><em>Tất cả</em> các lớp học</h4>
+                    </div>
+                    <div class="d-flex justify-content-end col-md-2 col-6">
+                        <div>
+                            <a class="btn-cyborg text-center" href="{{ route('admin-classroom.create') }}">+ Thêm lớp</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
