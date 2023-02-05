@@ -32,7 +32,7 @@ class Classroom extends Component
         $newQuestion->content = $this->newQuestionContent;
         $newQuestion->save();
 
-        $this->newQuestionContent = "";
+        $this->newQuestionContent = ""; 
     }
 
     public function render()

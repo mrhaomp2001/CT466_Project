@@ -22,8 +22,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(3)->create();
-        
         \App\Models\User::factory()->create([
             'name' => 'admin',
             'username' => 'admin',
@@ -33,6 +31,8 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => '1234567890',
         ]);
+        
+        \App\Models\User::factory(3)->create();
         
         $this->call(ClassroomSeeder::class);
         $this->call(QuestionSeeder::class);
